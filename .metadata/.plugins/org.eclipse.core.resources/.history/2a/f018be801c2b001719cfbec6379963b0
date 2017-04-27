@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+.div{
+   border: 5px solid d #87bfbf;
+   height: 450px;
+   width: 450px;
+   border-radius: 50px;
+   background-color: cyan;
+   margin-left: 400px;
+   margin-top: 20px;
+   
+}
+</style>
+<body>
+
+<div>
+	<hi>Welcome Here.</hi>
+</div>
+
+<div class="div">
+<center>
+<br>
+<a href="http://localhost:8011/FirstWebProject/">Login</a>
+<a href="http://localhost:8011/FirstWebProject/registration.html">Registration</a>
+<br><br><br>
+
+<form action="LoginServlet" method="get" style="height: 231px; ">
+Username : <input type="text" id="name"><br><br>
+Password : <input type="password" id="name"><br><br>
+<input type="submit" style="height: 40px; ">
+</form>
+</center>
+</div>
+
+
+</body>
+</html>
