@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Hello World</h1>
+<form action="firstservlet" method="get">
+Username : <input type="text" name="name"><br>
+Password : <input type="password" name="pwd"><br>
+<input type="submit">
+</form>
+
+<form action="ServletTwo" method="get">
+<input type="text" name="name">  
+<input type="submit" value="Google Search">  
+</form>
+
+</body>
+</html>
