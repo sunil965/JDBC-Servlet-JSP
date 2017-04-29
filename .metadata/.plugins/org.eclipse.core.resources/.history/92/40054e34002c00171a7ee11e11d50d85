@@ -1,0 +1,5 @@
+package com.bridgeit.loginApp.controller;
+
+public class LoginServlet {
+
+}

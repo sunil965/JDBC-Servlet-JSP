@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/FirstServlet")
+/*@WebServlet("/FirstServlet")*/
 public class FirstServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
@@ -21,13 +21,15 @@ public class FirstServlet extends HttpServlet {
 		    PrintWriter out = response.getWriter();  
 		          
 		    String n=request.getParameter("userName");  
+		    String n2=request.getParameter("userName");
 		    out.print("Welcome "+n);  
 		  
-		    Cookie ck=new Cookie("uname",n);//creating cookie object  
-		    response.addCookie(ck);//adding cookie in the response  
+		    Cookie ck=new Cookie("uname",n);	//creating cookie object  
+		    response.addCookie(ck);				//adding cookie in the response  
 		  
 		    //creating submit button  
-		    out.print("<form action='servlet2'>");  
+		    out.print("<form action='servlet2' method='post'> ");  
+		    out.print("<input type='hidden' name='uname' value='"+n2+"'>"); 
 		    out.print("<input type='submit' value='go'>");  
 		    out.print("</form>");  
 		          

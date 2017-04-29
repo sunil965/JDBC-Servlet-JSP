@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+form {
+ margin: 200px 400px 300px 400px;
+ paddind: 50px 40px 50px 40px;
+}
+</style>
+</head>
+
+<body>
+
+<div align="center">
+<form action="loginServlet">
+	UserName: <input type="text"><br><br>
+	Password: <input type="password"><br><br>
+	<input type="submit" name="Login">
+</form>
+<a href="Register.html">To register Click Here</a>
+</div>
+</body>
+</html>

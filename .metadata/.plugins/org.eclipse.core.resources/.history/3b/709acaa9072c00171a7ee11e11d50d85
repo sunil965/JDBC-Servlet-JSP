@@ -1,0 +1,29 @@
+package com.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.database.DbConnection;
+import com.mysql.jdbc.Connection;
+
+public class Registration extends HttpServlet{
+	Connection connect;
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		String email = req.getParameter("mail");
+		String password = req.getParameter("pwd");
+		String name=req.getParameter("name");
+		String contactString = req.getParameter("number");
+		
+		PrintWriter out=resp.getWriter();
+		connect = new DbConnection().connect();
+		
+	}
+
+}
