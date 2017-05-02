@@ -187,3 +187,47 @@ Apr 29, 2017 17:21:22.70 Created new window in existing browser session.
 Apr 29, 2017 17:44:20.38 Created new window in existing browser session.
 Apr 29, 2017 17:51:19.81 Created new window in existing browser session.
 Apr 29, 2017 17:52:41.16 Created new window in existing browser session.
+
+May 02, 2017 09:08:29.63 NEW SESSION
+May 02, 2017 09:08:29.64 [4032:4032:0502/090829.638875:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+May 02, 2017 09:08:37.26 [1:1:0502/090837.265777:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 09:10:42.98 [1:1:0502/091042.985319:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 09:11:41.16 [1:1:0502/091141.168455:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 09:19:56.82 Created new window in existing browser session.
+May 02, 2017 09:20:00.62 [1:1:0502/092000.628870:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 09:34:45.54 [1:1:0502/093445.544425:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 09:35:42.99 [WARNING:flash/platform/pepper/pep_module.cpp(63)] SANDBOXED
+May 02, 2017 09:51:42.75 [1:1:0502/095142.757292:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 09:55:56.14 [1:1:0502/095556.142026:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 09:57:37.97 [1:1:0502/095737.973343:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 10:08:11.19 [1:1:0502/100811.192769:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 10:08:33.99 [1:1:0502/100833.992586:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 10:14:47.61 [1:1:0502/101447.614313:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 10:17:29.28 Created new window in existing browser session.
+May 02, 2017 10:17:32.96 [1:1:0502/101732.965127:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 10:20:24.38 [1:1:0502/102024.387935:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 10:21:38.09 [1:1:0502/102138.091379:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 10:23:26.28 Created new window in existing browser session.
+May 02, 2017 10:23:31.19 [1:1:0502/102331.194525:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 10:29:51.67 Created new window in existing browser session.
+May 02, 2017 10:30:00.12 [1:1:0502/103000.128068:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 10:33:45.68 [1:1:0502/103345.686340:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 10:49:42.13 [1:1:0502/104942.136051:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 10:51:28.21 Created new window in existing browser session.
+May 02, 2017 10:51:32.97 [1:1:0502/105132.974964:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 10:53:34.30 [1:1:0502/105334.301823:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 10:59:33.23 Created new window in existing browser session.
+May 02, 2017 10:59:38.93 [1:1:0502/105938.939505:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 11:02:49.13 [1:1:0502/110249.130662:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 11:06:23.88 [1:1:0502/110623.888859:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 11:08:46.30 [1:1:0502/110846.304121:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 11:10:07.37 [1:1:0502/111007.377279:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 11:12:02.47 [1:1:0502/111202.478621:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 11:15:54.34 [1:1:0502/111554.341018:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 11:17:22.92 [1:1:0502/111722.924128:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 11:17:34.76 [1:1:0502/111734.764534:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 11:24:12.09 [1:1:0502/112412.097471:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 11:25:15.42 [1:1:0502/112515.425582:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 11:25:22.00 [1:1:0502/112522.007030:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 11:25:46.17 [1:1:0502/112546.177274:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+May 02, 2017 12:09:09.51 [1:1:0502/120909.518940:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
