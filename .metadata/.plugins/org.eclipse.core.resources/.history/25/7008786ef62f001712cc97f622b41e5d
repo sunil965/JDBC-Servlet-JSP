@@ -1,0 +1,75 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Index</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script type="text/javascript">  
+function validateform(){  
+	var uid = document.myform.uid.value;
+	var name=document.myform.user.value;  
+	var password=document.myform.password.value; 
+	var x = document.myform.mail.value;
+	var atposition=x.indexOf("@");  
+	var dotposition=x.lastIndexOf(".");  
+	  
+	if (uid==null || uid==""){  
+		  alert("UID can't be blank");  
+		  return false;  
+		}
+	 if (name==null || name==""){  
+	  alert("Name can't be blank");  
+	  return false;  
+	}
+	 if(password==null||password==""||password.length<6){  
+	  alert("Password must be at least 6 characters long.");  
+	  return false;  
+	  }
+	 if(atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
+		alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+		  return false;  
+	}
+	return true;
+}  
+</script>
+
+</head>
+<body>
+	<div align="right">
+		<a href="userlogin.jsp">Sign in.</a>
+	</div>
+	<div align="center">
+		<h1>USER REGISTRATION</h1>
+		<form name="myform" action="userreg" method="post" onsubmit="return validateform()">
+			<table>
+				<tr>
+					<td>User_ID</td>
+					<td><input type="text" name="uid"></td>
+				</tr>
+				<tr>
+					<td>Username</td>
+					<td><input type="text" name="user"></td>
+				</tr>
+				<tr>
+					<td>Email_ID</td>
+					<td><input type="text" name="mail"></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="pwd"></td>
+				</tr>
+				<tr>
+					<td><input type="submit"></td>
+					<!-- class="btn btn-sm btn-success" -->
+					<td><input type="reset"></td>
+				</tr>
+			</table>
+
+		</form>
+		<h4>If Registered Then Login.</h4>
+	</div>
+</html>

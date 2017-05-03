@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 //@WebServlet("/userlogin")
 public class Userlogin extends HttpServlet {
@@ -27,13 +28,15 @@ public class Userlogin extends HttpServlet {
 		Connection connect = DataBase.connect();
 		PreparedStatement statement;
 		try {
-			String query = "select * from Registration where email=? and password=?";
+			String query = "select * from Usertable where email=? and password=?";
 			statement = (PreparedStatement) connect.prepareStatement(query);
 			statement.setString(1, mailid);
 			statement.setString(2, password);
 			ResultSet resultSet = statement.executeQuery();
 			if (resultSet.next()) {
-				out.println("Welcome " + resultSet.getString(1));
+				
+				HttpSession session = request.getSession();
+				session.setAttribute("userid", resultSet.getInt(4));
 				response.sendRedirect("employee.jsp");
 			} else {
 				out.println("Incorrect Email_ID or Password.");

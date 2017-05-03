@@ -285,3 +285,10 @@ May 02, 2017 19:28:45.35 A Parser-blocking, cross site (i.e. different eTLD+1) s
 May 02, 2017 19:28:45.35 A Parser-blocking, cross site (i.e. different eTLD+1) script, http://www.statcounter.com/counter/counter_xhtml.js, is invoked via document.write. This MAY be blocked by the browser in this or a future page load due to poor network connectivity. If blocked in this page load, it will be confirmed in a subsequent console message.See https://www.chromestatus.com/feature/5718547946799104 for more details.
 May 02, 2017 19:47:02.38 [1:1:0502/194702.384809:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
 May 02, 2017 19:47:02.38 [1:1:0502/194702.386150:ERROR:KeyboardEventManager.cpp(427)] Not implemented reached in static bool blink::KeyboardEventManager::currentCapsLockState()
+
+May 03, 2017 12:03:23.74 NEW SESSION
+May 03, 2017 12:03:23.74 Created new window in existing browser session.
+May 03, 2017 12:23:56.26 Created new window in existing browser session.
+May 03, 2017 12:50:10.60 Created new window in existing browser session.
+May 03, 2017 15:09:00.19 Created new window in existing browser session.
+May 03, 2017 17:21:03.28 Created new window in existing browser session.

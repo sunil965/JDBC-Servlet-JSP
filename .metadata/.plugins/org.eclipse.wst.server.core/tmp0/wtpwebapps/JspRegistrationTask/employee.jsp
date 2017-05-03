@@ -7,10 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div align="right"><a href="employeeDetails">Employee Details</a></div>
 <div align="center">
  <h1>EMPLOYEE REGISTRATION</h1>
 	<form action="employeeRegister" method="post">
-		UID : <input type="text" name="uid"><br><br>
+		<!-- UID : <input type="text" name="uid"><br><br> -->
 		Name :<input type="text" name="uname"><br><br>
 		Email_ID :<input type="email" name="mail"><br><br>
 		Address : <textarea rows="2" cols="20" name="address"></textarea><br><br>
