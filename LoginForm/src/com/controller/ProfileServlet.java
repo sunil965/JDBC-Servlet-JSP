@@ -59,7 +59,6 @@ public class ProfileServlet extends HttpServlet {
 				out.println("<div align='center'><h1>" + "Your Profile Details Are" + "</h1>");
 				// out.print("Welcome: "+emailid);
 				while (result.next()) {
-					System.out.print("Welcome: "+emailid);
 					out.println("<h4> EMAIL_ID " + result.getString(1) + "</h4>");
 					out.println("<h4> PASSWORD " + result.getString(2) + "</h4>");
 					out.println("<h4> USER " + result.getString(3) + "</h4>");
