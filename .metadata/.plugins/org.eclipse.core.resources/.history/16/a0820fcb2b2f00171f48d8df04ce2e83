@@ -1,0 +1,55 @@
+package com.bridgeit.jsptask;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+//@WebServlet("/employeeRegister")
+public class EmployeeRegister extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+  
+	/*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}*/
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+//		doGet(request, response);
+		System.out.println("Employee Registration Called");
+		
+		String employeeName = request.getParameter("uname");
+		String employeeEmail = request.getParameter("mail");
+		String address = request.getParameter("address");
+		String company = request.getParameter("company");
+		int age = Integer.parseInt(request.getParameter("age"));
+		String gender = request.getParameter("gender");
+		String domain = request.getParameter("specialized");
+		String language = request.getParameter("language");
+		
+		Connection connect = DataBase.connect();
+		try {
+			PreparedStatement pstate = connect.prepareStatement("insert into EmployeeTable values(?,?,?,?,?,?,?,?)");
+			pstate.setString(1, employeeName);
+			pstate.setString(2, employeeEmail);
+			pstate.setString(3, address);
+			pstate.setString(4, company);
+			pstate.setInt(5, age);
+			pstate.setString(6, gender);
+			pstate.setString(7, domain);
+			pstate.setString(8, language);
+			pstate.executeUpdate();
+			connect.close();
+			response.sendRedirect("employee.jsp");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

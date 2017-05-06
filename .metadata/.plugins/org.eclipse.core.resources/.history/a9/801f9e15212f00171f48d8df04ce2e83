@@ -1,0 +1,31 @@
+package com.bridgeit.jsptask;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+//@WebServlet("/userlogin")
+public class Userlogin extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+ 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String user = request.getParameter("user");
+		String password = request.getParameter("pwd");
+		
+		Connection connect = DataBase.connect();
+		PreparedStatement pstate;
+		try {
+			pstate = connect.prepareStatement("select * from Usertable");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

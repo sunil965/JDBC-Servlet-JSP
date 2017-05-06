@@ -1,0 +1,11 @@
+1493365099436	Rename resource 'Database'
+1493365543621	Rename package 'database'
+1493365574417	Rename package 'Servlets'
+1493372210847	Delete element
+1493377374265	Move 'Registeration.java' to 'controller'
+1493377389780	Move 'LoginServlet.java' to 'controller'
+1493377485772	Move 'DbConnection.java' to 'database'
+1493381993272	Rename local variable 'userName'
+1493468543320	Rename resource 'web.xml'
+1493469067246	Rename resource 'web.xml.txt'
+1493469073843	Rename resource 'web.xml\'
