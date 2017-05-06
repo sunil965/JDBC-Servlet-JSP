@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-//@WebServlet("/userlogin")
 public class Userlogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -34,14 +33,15 @@ public class Userlogin extends HttpServlet {
 			statement.setString(2, password);
 			ResultSet resultSet = statement.executeQuery();
 			if (resultSet.next()) {
-				
+
 				HttpSession session = request.getSession();
 				session.setAttribute("userid", resultSet.getInt(4));
 				response.sendRedirect("employee.jsp");
 			} else {
+				request.getRequestDispatcher("userlogin.jsp").include(request, response);
 				out.println("Incorrect Email_ID or Password.");
-				// request.getRequestDispatcher("userlogin.jsp").include(request, response);
-				response.sendRedirect("userlogin.jsp");
+				out.close();
+				// response.sendRedirect("userlogin.jsp");
 			}
 
 		} catch (SQLException e) {

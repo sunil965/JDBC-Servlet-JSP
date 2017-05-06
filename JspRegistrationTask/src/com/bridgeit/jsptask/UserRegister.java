@@ -4,12 +4,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.naming.Context;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.mysql.jdbc.Statement;
 
 public class UserRegister extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -19,13 +24,44 @@ public class UserRegister extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		out.println("User Register Servlet Called.");
-		String name = request.getParameter("user");
-		String email = request.getParameter("mail");
-		String password = request.getParameter("pwd");
-		int uid = Integer.parseInt(request.getParameter("uid"));
-
 		Connection connect = DataBase.connect();
+		out.println("User Register Servlet Called.");
+
+		String name = request.getParameter("user");
+		if (name == null || name == "") {
+			request.getRequestDispatcher("/index.jsp").include(request, response);
+			out.println("<p>Name : MISSING</p>");
+			return;
+		}
+
+		String email = request.getParameter("mail");
+		if (email == null || email == "") {
+			request.getRequestDispatcher("/index.jsp").include(request, response);
+			out.println("<p>Email : MISSING</p>");
+			return;
+		}
+
+		String password = request.getParameter("pwd");
+		if (password == null || password.length() < 6) {
+			request.getRequestDispatcher("/index.jsp").include(request, response);
+			out.println("<p>Password : MISSING</p>");
+			return;
+		}
+
+		try {
+			Statement state = (Statement) connect.createStatement();
+			ResultSet resultSet = state.executeQuery("Select * from Usertable");
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		int uid = Integer.parseInt(request.getParameter("uid"));
+		if (uid == 0 || uid <= 100) {
+			request.getRequestDispatcher("/index.jsp").include(request, response);
+			out.println("<p>UID : Minimum 3 Digit</p>");
+			return;
+		}
+
+		
 		try {
 			PreparedStatement pstate = connect.prepareStatement("insert into Usertable values(?,?,?,?)");
 			pstate.setString(1, name);

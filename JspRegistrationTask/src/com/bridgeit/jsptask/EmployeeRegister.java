@@ -1,6 +1,7 @@
 package com.bridgeit.jsptask;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -14,28 +15,70 @@ import javax.servlet.http.HttpSession;
 //@WebServlet("/employeeRegister")
 public class EmployeeRegister extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-  
-	/*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}*/
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//		doGet(request, response);
+	/*
+	 * protected void doGet(HttpServletRequest request, HttpServletResponse
+	 * response) throws ServletException, IOException { // TODO Auto-generated
+	 * method stub
+	 * response.getWriter().append("Served at: ").append(request.getContextPath(
+	 * )); }
+	 */
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		PrintWriter out = response.getWriter();
 		System.out.println("Employee Registration Servlet Called");
 		HttpSession session = request.getSession();
-		
 		int uid = (int) session.getAttribute("userid");
+
 		String employeeName = request.getParameter("uname");
+		if (employeeName == null) {
+			request.getRequestDispatcher("employee.jsp").include(request, response);
+			out.println("<p>Name : MISSING</p>");
+			return;
+		}
 		String employeeEmail = request.getParameter("mail");
+
 		String address = request.getParameter("address");
+		if (address == null) {
+			request.getRequestDispatcher("employee.jsp").include(request, response);
+			out.println("<p>ADDRESS : MISSING</p>");
+			return;
+		}
+
 		String company = request.getParameter("company");
+		if (company == null) {
+			request.getRequestDispatcher("employee.jsp").include(request, response);
+			out.println("<p>COMPANY : MISSING</p>");
+			return;
+		}
+
 		int age = Integer.parseInt(request.getParameter("age"));
+		if (age < 18 || age > 99) {
+			request.getRequestDispatcher("employee.jsp").include(request, response);
+			out.println("<p> AGE : BETWEEN 18 AND 99");
+			return;
+		}
 		String gender = request.getParameter("gender");
+		if (gender == null) {
+			request.getRequestDispatcher("employee.jsp").include(request, response);
+			out.println("Gender Not Selected");
+			return;
+		}
 		String domain = request.getParameter("specialized");
+		if (domain == null) {
+			request.getRequestDispatcher("employee.jsp").include(request, response);
+			out.println("Specialization Tech Not Selected");
+			return;
+		}
 		String language = request.getParameter("language");
-		
+		if (language == null) {
+			request.getRequestDispatcher("employee.jsp").include(request, response);
+			out.println("Language Not Selected");
+			return;
+		}
+
 		Connection connect = DataBase.connect();
 		try {
 			PreparedStatement pstate = connect.prepareStatement("insert into EmployeeTable values(?,?,?,?,?,?,?,?,?)");
@@ -50,6 +93,7 @@ public class EmployeeRegister extends HttpServlet {
 			pstate.setString(9, language);
 			pstate.executeUpdate();
 			connect.close();
+
 			response.sendRedirect("employeeDetails");
 		} catch (SQLException e) {
 			e.printStackTrace();

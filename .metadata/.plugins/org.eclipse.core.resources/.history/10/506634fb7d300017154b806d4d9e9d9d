@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>User Login</title>
+
+<script type="text/javascript">
+function userLogin(){
+	var pass=document.getElementById("pwd").value;
+	var mail= document.getElementById("mailid").value;
+	var atposition=mail.indexOf("@");  
+	var dotposition=mail.lastIndexOf(".");  
+	
+	if (atposition < 1 || dotposition < atposition+2 || dotposition +2 >= mail.length){  
+		  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+		  return false;  
+		  }  
+	if(pass.length==null||pass==" "||pass.length<=3)
+	{
+	alert("Enter Password");
+	return false;
+	}
+	
+	else
+		{
+		return true;
+		}
+}
+
+</script>
+
+</head>
+<body>
+<div align="right">
+<a href="index.jsp">Sign up.</a>
+</div>
+<div align="center">
+<h1>USER LOGIN PAGE</h1>
+ <form action="userlogin" method="post">
+ 	Email_ID : <input type="text" name="mail" id="mailid"><br><br>
+ 	Password : <input type="password" name="pwd" id="pwd"><br><br>
+ 	<input type="submit">
+ </form>
+ </div>
+</body>
+</html>
