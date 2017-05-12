@@ -83,10 +83,19 @@ public class EmployeeRegister extends HttpServlet {
 				pstate.setString(7, gender);
 				pstate.setString(8, domain);
 				pstate.setString(9, language);
-				pstate.executeUpdate();
+				 int count = pstate.executeUpdate();
+				 if(count>0){
+					 response.sendRedirect("employeeDetails");
+					 connect.close();
+				 }
+				 else {
+					 out.println("Updation Failed");
+					 request.getRequestDispatcher("employeeDetails.jsp").include(request, response);
+					 connect.close();
+				 }
+				/*pstate.executeUpdate();
 				connect.close();
-
-				response.sendRedirect("employeeDetails");
+				response.sendRedirect("employeeDetails");*/
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

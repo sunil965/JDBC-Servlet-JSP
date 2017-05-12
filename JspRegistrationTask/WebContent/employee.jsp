@@ -169,8 +169,8 @@ function employeeValidate(){
 </head>
 <body>
 	<div class="div" align="right">
-		<a href="employeeDetails" style="text-decoration:none"><font color="white">Employee
-				Details</font></a> <a href="logoutServlet" style="text-decoration:none"><font color="white">Logout</font></a>
+		<a href="employeeDetails" style="text-decoration:none"><font color="white">Employee Details</font></a> 
+		<a href="logoutServlet" style="text-decoration:none"><font color="white">Logout</font></a>
 	</div>
 	<form action="employeeRegister" method="post"
 		onsubmit="return employeeValidate()">
@@ -178,25 +178,20 @@ function employeeValidate(){
 		<h1>Sign Up</h1>
 
 		<fieldset>
-			<label for="name">Name:</label> <input type="text" name="uname"
-				id="name"> <label for="mail">Email:</label> <input
-				type="email" id="mail" name="mail"> <label for="password">Company:</label>
-			<input type="text" name="company" id="cmp"> <label>Age:</label>
-			<input type="text" id="age" name="age"> <label>Gender:</label>
-			<input type="radio" id="gender" value="male" name="gender"><label
-				for="under_13" class="light"> Male</label><br> <input
-				type="radio" id="gender" value="female" name="gender"><label
-				for="over_13" class="light">Female</label>
-
+			<label for="name">Name:</label> <input type="text" name="uname"id="name">
+			<label for="mail">Email:</label> <input	type="email" id="mail" name="mail">
+			<label for="password">Company:</label> <input type="text" name="company" id="cmp">
+			<label>Age:</label>	<input type="text" id="age" name="age">
+			<label>Gender:</label> <input type="radio" id="gender" value="male" name="gender">
+							<label for="under_13" class="light"> Male</label><br>
+			 				<input type="radio" id="gender" value="female" name="gender">
+			 				<label	for="over_13" class="light">Female</label>
 		</fieldset>
 		<fieldset>
-
 			<label for="bio">Address:</label>
 			<textarea name="address" id="addr"></textarea>
-
 		</fieldset>
 		<fieldset>
-
 			<label for="job">Specialized Technology:</label> <select
 				name="specialized" id="domain">
 				<optgroup label="Web">

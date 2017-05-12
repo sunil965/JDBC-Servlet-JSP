@@ -25,13 +25,16 @@
 			console.log(data);
 		})
 	}); */
-	var get = function(name,a,b,c,d,e,f,g) {
-		console.log(name);
-		console.log(a);
-		console.log(b);
-		console.log(c);
-		console.log(d);
-		$("#dataOnDialog").html(name+"<br>"+a+"<br>"+b+"<br>");
+	var get = function(name,address,email,comp,age,gender,spec,lang) {
+		//console.log(name);
+		$("#name").val(name);
+		$("#addr").val(address);
+		$("#email").val(email);
+		$("#company").val(comp);
+		$("#age").val(age);
+		$("#gender").val(gender);
+		$("#spec").val(spec);
+		$("#lang").val(lang);
 	}
 </script>
 </head>
@@ -69,7 +72,7 @@
 		} else {
 	%>
 	<div align="center">
-		<h1>EMPLOYEES NAME CHART</h1>
+		<h1>EMPLOYEES LIST</h1>
 		<div class="container">
 			<table border=1 width=15% height=75%>
 				<%
@@ -77,8 +80,7 @@
 				%>
 				<tr
 					onclick="get('<%=resultSet.getString(2)%>', '<%=resultSet.getString(3)%>', '<%=resultSet.getString(4)%>', '<%=resultSet.getString(5)%>', '<%=resultSet.getInt(6)%>', '<%=resultSet.getString(7)%>',' <%=resultSet.getString(8)%>', '<%=resultSet.getString(9)%>')">
-					<td align="center"><p id="some" data-toggle="modal"
-							data-target="#myModal"><%=resultSet.getString(2)%></p></td>
+					<td align="center"><p id="some" data-toggle="modal"	data-target="#myModal"><%=resultSet.getString(2)%></p></td>
 				</tr>
 				<%
 					}
@@ -101,14 +103,35 @@
 					</div>
 
 					<div class="modal-body">
-						<%
-							out.print("Name\t Address\t Email_Id\t Company\t Age\t Gender\t Specialized\t Language");
-						%>
-						<div contenteditable=true style="min-height: 30px; outline: none">
-							<div id="dataOnDialog"></div>
-						</div>
-						<button>Update</button>
-						<button>Delete</button>
+						<div style="min-height: 30px; outline: none">
+						<form action="updation" method="post">
+						    Details Of:   <input type="text" name="email" id="email" readonly="readonly" size="25" style="border: none">
+						<table>
+						<tr>
+						    <td>Name</td>	    <td align="right"><input type="text" name="name" id="name" style="border: none"></td>
+						 </tr>
+						 <tr>
+						    <td>Address</td>	<td align="right"><input type="text" name="addr" id="addr" style="border: none"></td>
+						 </tr>
+						 <tr>
+						    <td>Company</td>	<td align="right"><input type="text" name="company" id="company" style="border: none"></td>
+						 </tr>
+						 <tr>
+						    <td>Age</td>		<td align="right"><input type="text" name="age" id="age" style="border: none"></td>
+						 </tr>
+						 <tr>
+						    <td>Gender</td>		<td align="right"><input type="text" name="gender" id="gender" style="border: none"></td>
+						 </tr>
+						 <tr>
+						    <td>Specialize</td>	<td align="right"><input type="text" name="spec" id="spec" style="border: none"></td>
+						 </tr>
+						 <tr>
+						    <td>Language</td>	<td align="right"><input type="text" name="lang" id="lang" style="border: none"></td>
+						 </tr>
+						</table>
+							<input type="submit"value= "Update">
+						</form>
+					</div>
 					</div>
 				</div>
 			</div>

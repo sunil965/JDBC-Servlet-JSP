@@ -166,7 +166,6 @@ function userReg()
 	</div>
 	<div class="login-page">
 		<div class="form">
-
 			<h3>User Register Page</h3>
 			<form class="login-form" action="userreg" method="post"
 				onsubmit="return userReg()">
