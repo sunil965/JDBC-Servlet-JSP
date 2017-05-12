@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
         String name=request.getParameter("name");  
         String password=request.getParameter("password");  
           
-        if(password.equals("admin123")){  
+        if(password.equals("name")){  
             out.print("You are successfully logged in!");  
             out.print("<br>Welcome, "+name);  
               

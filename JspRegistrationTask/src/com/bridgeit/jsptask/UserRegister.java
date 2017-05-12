@@ -48,12 +48,6 @@ public class UserRegister extends HttpServlet {
 			return;
 		}
 
-		try {
-			Statement state = (Statement) connect.createStatement();
-			ResultSet resultSet = state.executeQuery("Select * from Usertable");
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
 		int uid = Integer.parseInt(request.getParameter("uid"));
 		if (uid == 0 || uid <= 100) {
 			request.getRequestDispatcher("/index.jsp").include(request, response);
@@ -70,7 +64,9 @@ public class UserRegister extends HttpServlet {
 			pstate.setInt(4, uid);
 			pstate.executeUpdate();
 			connect.close();
-			response.sendRedirect("userlogin.jsp");
+//			request.getRequestDispatcher("loginJspCall").forward(request, response);;
+			response.sendRedirect("loginJspCall");
+			return;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

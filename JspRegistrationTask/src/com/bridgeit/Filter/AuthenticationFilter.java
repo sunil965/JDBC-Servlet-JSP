@@ -25,10 +25,13 @@ public class AuthenticationFilter implements Filter {
 		Integer uid = (Integer) session.getAttribute("userid");
 		
 		if(uid==null){
-			response2.sendRedirect("index.jsp");
+			response2.sendRedirect("preServlet");
+		}
+		else{
+			response2.sendRedirect("employeeDetails");
 		}
 		// pass the request along the filter chain
-		chain.doFilter(request, response);
+		/*chain.doFilter(request, response);*/
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {

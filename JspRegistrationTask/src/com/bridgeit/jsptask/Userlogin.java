@@ -36,7 +36,7 @@ public class Userlogin extends HttpServlet {
 
 				HttpSession session = request.getSession();
 				session.setAttribute("userid", resultSet.getInt(4));
-				response.sendRedirect("employee.jsp");
+				response.sendRedirect("employeeDetailCall");
 				return;
 			} else {
 				request.getRequestDispatcher("userlogin.jsp").include(request, response);
@@ -49,5 +49,4 @@ public class Userlogin extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
 }

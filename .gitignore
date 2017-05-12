@@ -23,6 +23,8 @@
 *.rar
 *.tar
 *.zip
+*.metadata
+*.recommenders
 
 # Logs and databases #
 ######################

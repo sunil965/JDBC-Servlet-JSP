@@ -114,9 +114,23 @@
 }
 
 .div {
-	height: 75px;
-	width: 100%;
 	background-color: gray;
+	overflow: hidden;
+}
+
+.div a {
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.div a:hover {
+	background-color: #ddd;
+	color: black;
 }
 </style>
 
@@ -128,8 +142,7 @@
 		}, "slow");
 	});
 	
-	function userLogin(){
-		var pass=document.getElementById("pwd").value;
+	function userLogin(){var pass=document.getElementById("pwd").value;
 		var mail= document.getElementById("mailid").value;
 		var atposition=mail.indexOf("@");  
 		var dotposition=mail.lastIndexOf(".");  
@@ -149,27 +162,32 @@
 </head>
 
 <body bgcolor="white">
-	<div class="div"></div>
+	<div class="div" align="right">
+	<a href="" style="text-decoration: none"><font
+			color="white"></font></a>
+		<%
+			Integer uid = (Integer) session.getAttribute("userid");
+			if (uid != null) {
+		%>
+		<a href="employeeDetails" style="text-decoration: none"><font
+			color="white">Employee Details</font></a>
+		<a href="logoutServlet" style="text-decoration: none"><font
+			color="white">Logout</font></a>
+		<%
+			}
+		%>
+	</div>
 	<div class="login-page">
 		<div class="form">
 
 			<h3>Login Form Page</h3>
-			<form class="register-form">
-				<input type="text" placeholder="name" /> <input type="password"
-					placeholder="password" /> <input type="text"
-					placeholder="email address" />
-				<button>create</button>
-				<p class="message">
-					Already registered? <a href="#">Sign In</a>
-				</p>
-			</form>
 			<form class="login-form" action="userlogin" method="post"
 				onsubmit="return userLogin()">
 				<input type="text" name="mail" id="mailid" placeholder="username" />
 				<input type="password" name="pwd" id="pwd" placeholder="password" />
 				<button>login</button>
 				<p class="message">
-					Not registered? <a href="index.jsp">Create an account</a>
+					Not registered? <a href="preServlet">Create an account</a>
 				</p>
 			</form>
 		</div>

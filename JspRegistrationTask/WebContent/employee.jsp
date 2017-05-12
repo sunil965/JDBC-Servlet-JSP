@@ -97,6 +97,25 @@ label.light {
 		max-width: 480px;
 	}
 }
+
+.div {
+	background-color: gray;
+	overflow: hidden;
+}
+.div a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.div a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
 </style>
 <script type="text/javascript">
 function employeeValidate(){
@@ -131,10 +150,6 @@ function employeeValidate(){
 	if(age.length==null || age.length==" " && age==[a-z]){
 		alert("Age can't be empty  !!");
 		return false;
-		/* if(age==[a-z]){
-			alert("Age Must Be a Number !!");
-			return false;
-		} */
 	}
 	if(gender.length==null || gender.length==" "){
 		alert("Gender can't be empty !!");
@@ -152,11 +167,11 @@ function employeeValidate(){
 }
 </script>
 </head>
-<div align="right">
-	<a href="employeeDetails">Employee Details</a>
-	<a href="logoutServlet">Logout</a>
-</div>
 <body>
+	<div class="div" align="right">
+		<a href="employeeDetails" style="text-decoration:none"><font color="white">Employee
+				Details</font></a> <a href="logoutServlet" style="text-decoration:none"><font color="white">Logout</font></a>
+	</div>
 	<form action="employeeRegister" method="post"
 		onsubmit="return employeeValidate()">
 

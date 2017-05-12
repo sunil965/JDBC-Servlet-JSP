@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import = "java.io.*,java.util.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -112,7 +113,7 @@
 }
 
 .div {
-	height: 75px;
+	height: 65px;
 	width: 100%;
 	background-color: gray;
 }
@@ -159,9 +160,10 @@ function userReg()
 
 </script>
 </head>
-<body>
+
 <body bgcolor="white">
-	<div class="div"></div>
+	<div class="div"><font size="25px" color="white">BridgeLabz</font>
+	</div>
 	<div class="login-page">
 		<div class="form">
 
@@ -174,11 +176,11 @@ function userReg()
 					type="password" name="pwd" id="pwd1" placeholder="password" />
 				<button>register</button>
 				<p class="message">
-					Already registered? <a href="userlogin.jsp">Sign In</a>
+					Already registered? <a href="loginJspCall">Sign In</a>
 				</p>
 			</form>
 		</div>
 	</div>
 </body>
-</body>
+
 </html>
