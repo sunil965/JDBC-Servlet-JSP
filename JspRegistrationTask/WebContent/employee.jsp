@@ -168,12 +168,8 @@ function employeeValidate(){
 </script>
 </head>
 <body>
-	<div class="div" align="right">
-		<a href="employeeDetails" style="text-decoration:none"><font color="white">Employee Details</font></a> 
-		<a href="logoutServlet" style="text-decoration:none"><font color="white">Logout</font></a>
-	</div>
-	<form action="employeeRegister" method="post"
-		onsubmit="return employeeValidate()">
+<jsp:include page="header.jsp"></jsp:include>
+	<form action="employeeRegister" method="post" onsubmit="return employeeValidate()">
 
 		<h1>Sign Up</h1>
 

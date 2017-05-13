@@ -12,6 +12,7 @@
 	width: 360px;
 	padding: 8% 0 0;
 	margin: auto;
+	margin-top: -50px;
 }
 
 .form {
@@ -60,7 +61,7 @@
 .form .message {
 	margin: 15px 0 0;
 	color: #b3b3b3;
-	font-size: 12px;
+	font-size: 15px;
 }
 
 .form .message a {
@@ -77,6 +78,7 @@
 	z-index: 1;
 	max-width: 300px;
 	margin: 0 auto;
+	margin-top: -100px;
 }
 
 .container:before, .container:after {
@@ -113,7 +115,7 @@
 }
 
 .div {
-	height: 65px;
+	height: 50px;
 	width: 100%;
 	background-color: gray;
 }
@@ -162,7 +164,7 @@ function userReg()
 </head>
 
 <body bgcolor="white">
-	<div class="div"><font size="25px" color="white">BridgeLabz</font>
+	<div class="div" style="hight:53px"><font size="10px" color="white">Employee Forum</font>
 	</div>
 	<div class="login-page">
 		<div class="form">

@@ -61,7 +61,7 @@
 .form .message {
 	margin: 15px 0 0;
 	color: #b3b3b3;
-	font-size: 12px;
+	font-size: 15px;
 }
 
 .form .message a {
@@ -129,6 +129,7 @@
 }
 
 .div a:hover {
+	height: 50px;
 	background-color: #ddd;
 	color: black;
 }
@@ -147,7 +148,7 @@
 		var atposition=mail.indexOf("@");  
 		var dotposition=mail.lastIndexOf(".");  
 		
-		if (atposition < 1 || dotposition < atposition+2 || dotposition +2 >= mail.length){  
+		if (atposition<1 || dotposition<atposition+2 || dotposition +2 >= mail.length){  
 			  alert("Please enter a valid e-mail address");  
 			  return false;  		  }  
 		if(pass.length==null||pass==" "||pass.length<=3)
@@ -162,7 +163,7 @@
 </head>
 
 <body bgcolor="white">
-	<div class="div" align="right">
+	
 	<a href="" style="text-decoration: none"><font
 			color="white"></font></a>
 		<%
