@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,16 +34,18 @@ public class Userlogin extends HttpServlet {
 			statement.setString(2, password);
 			ResultSet resultSet = statement.executeQuery();
 			if (resultSet.next()) {
-
 				HttpSession session = request.getSession();
 				session.setAttribute("userid", resultSet.getInt(4));
 				response.sendRedirect("employeeDetailCall");
 				return;
 			} else {
-				request.getRequestDispatcher("userlogin.jsp").include(request, response);
-				out.println("Incorrect Email_ID or Password.");
+//				request.getRequestDispatcher("userlogin.jsp").include(request, response);
+//				out.println("Incorrect Email_ID or Password.");
+				HttpSession session = request.getSession();
+//				ServletContext context = request.getServletContext();
+				session.setAttribute("invalid","Invalid Email Id or Password");
+				response.sendRedirect("loginJspCall");
 				out.close();
-				// response.sendRedirect("userlogin.jsp");
 			}
 
 		} catch (SQLException e) {

@@ -47,7 +47,7 @@ public class EmployeeRegister extends HttpServlet {
 			}
 
 			int age = Integer.parseInt(request.getParameter("age"));
-			if (age < 18 || age > 99) {
+			if (age < 18 || age > 110) {
 				request.getRequestDispatcher("employee.jsp").include(request, response);
 				out.println("<p> AGE : BETWEEN 18 AND 99");
 				return;
@@ -58,7 +58,7 @@ public class EmployeeRegister extends HttpServlet {
 				out.println("Gender Not Selected");
 				return;
 			}
-			String domain = request.getParameter("specialized");
+			String domain = request.getParameter("specialized").trim();
 			if (domain == null) {
 				request.getRequestDispatcher("employee.jsp").include(request, response);
 				out.println("Specialization Tech Not Selected");

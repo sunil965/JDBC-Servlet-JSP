@@ -163,9 +163,8 @@
 </head>
 
 <body bgcolor="white">
-	
-	<a href="" style="text-decoration: none"><font
-			color="white"></font></a>
+	<jsp:include page="header.jsp"></jsp:include>
+	<a href="" style="text-decoration: none"><font color="white"></font></a>
 		<%
 			Integer uid = (Integer) session.getAttribute("userid");
 			if (uid != null) {
@@ -177,7 +176,7 @@
 		<%
 			}
 		%>
-	</div>
+	<!-- </div> -->
 	<div class="login-page">
 		<div class="form">
 
@@ -186,6 +185,13 @@
 				onsubmit="return userLogin()">
 				<input type="text" name="mail" id="mailid" placeholder="username" />
 				<input type="password" name="pwd" id="pwd" placeholder="password" />
+				
+				<%
+					String string = (String) session.getAttribute("invalid"); 
+					if(string!=null) {%>
+					<p style="color: red"><%out.print(string); %></p><%
+					}
+				%>
 				<button>login</button>
 				<p class="message">
 					Not registered? <a href="preServlet">Create an account</a>

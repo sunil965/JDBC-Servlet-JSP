@@ -4,18 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
 	/* $(document).ready(function() {
 		$(document).on("click", "#data", function(event) {
@@ -37,41 +31,130 @@
 		$("#lang").val(lang);
 	}
 </script>
+
 <style type="text/css">
-	#ok, #cancel{
-		margin-bottom: 4%;
-	}
+
+  @import "compass/css3";
+  @import "compass/css3";
+  @import url(https://fonts.googleapis.com/css?family=Patua+One|Open+Sans);
+
+  * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  	box-sizing: border-box;
+  }
+
+  body {
+    background-color:grey;
+  }
+
+  table {
+    width: 50%;
+    border-collapse: separate;
+    background:#fff;
+    @include border-radius(5px);
+    margin:50px auto;
+    @include box-shadow(0px 0px 5px rgba(0,0,0,0.3));
+  }
+
+  thead {
+      background:#353a40;
+    @include border-radius(5px);
+  }
+
+  thead th {
+    font-family: 'Patua One', cursive;
+    font-size:16px;
+    font-weight:400;
+    color:#fff;
+    @include text-shadow(1px 1px 0px rgba(0,0,0,0.5));
+    text-align:center;
+    padding:20px;
+    @include background-image(linear-gradient(#646f7f, #4a5564));
+    border-top:1px solid #858d99;
+
+    &:first-child {
+     @include border-top-left-radius(5px);
+    }
+
+    &:last-child {
+      @include border-top-right-radius(5px);
+    }
+  }
+
+  tbody tr td {
+    text-align:center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight:400;
+    color:#5f6062;
+    font-size:13px;
+    padding:20px 20px 20px 20px;
+    border-bottom:1px solid #e0e0e0;
+
+  }
+
+  tbody tr:nth-child(2n) {
+    background:#f0f3f5;
+  }
+
+  tbody tr:last-child td {
+    border-bottom:none;
+    &:first-child {
+      @include border-bottom-left-radius(5px);
+    }
+    &:last-child {
+      @include border-bottom-right-radius(5px);
+    }
+  }
+
+  tbody:hover > tr td {
+    @include opacity(0.5);
+
+    /* uncomment for blur effect */
+    /* color:transparent;
+    @include text-shadow(0px 0px 2px rgba(0,0,0,0.8));*/
+  }
+
+  tbody:hover > tr:hover td {
+    @include text-shadow(none);
+    color:#2d2d2d;
+    @include opacity(1.0);
+  }
+  
+
 	.heading{
 		border: none;
 		text-align:center;
 		font-size: 35px;
 	}
+	#ok, #cancel{ 	margin-bottom: 4%;	}
+	p {	text-align: center;}
+	
 	#p1toggle2{
 		    margin: 0 0 10px;
    			margin-top: 42px;
 	}
-	table{
+	/* table{
 	border: none;
 	}
 	tbody{
 	border: white!important;
-	}
+	} */
+	
 </style>
 </head>
 
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-	<p>
+<%-- 	<p>
 		Request URI:<%=request.getRequestURI()%></p>
 	<p>
-		Protocol:
-		<%=request.getProtocol()%></p>
+		Protocol:	<%=request.getProtocol()%></p>
 	<p>
-		PathInfo:
-		<%=request.getPathInfo()%></p>
+		PathInfo:	<%=request.getPathInfo()%></p>
 	<p>
 		Remote Address:<%=request.getRemoteAddr()%></p>
-
+ --%>
 	<%
 		Integer uid = (Integer) session.getAttribute("userid");
 		if (uid != null) {
@@ -83,25 +166,34 @@
 				ResultSet resultSet = statement.executeQuery();
 				if (!resultSet.isBeforeFirst()) {
 	%>
-	<p>Their is No Data Available</p>
-	<a href="employeeDetailCall">ADD EMPLOYEE</a>
-	<%
-		} else {
-	%>
 	<div align="center">
-		<h1>EMPLOYEES LIST</h1>
-		<div class="container">
-			<table border=1 width=15% height=75%>
+		<p align="center">Their is No Data Available</p>
+		<a href="employeeDetailCall" align="center">ADD EMPLOYEE</a>
+	</div>
+				<%
+					} else {
+				%>
+	<div align="center" style="margin-top: 80px;">
+		<h1>Registered Employees</h1>
+		<div class="container" style="margin-top: -45px;
+		">
+			<table border=1 width=50% height=75%>
+				<thead>
+		          <tr>
+			          <th>Sr.</th>
+	                  <th>Name</th>
+                  </tr>
+   				</thead>
 				<%  int count=1;
 					while (resultSet.next()) {
 				%>
-				
+				<tbody>
 				<tr
 					onclick="get('<%=resultSet.getString(2)%>', '<%=resultSet.getString(3)%>', '<%=resultSet.getString(4)%>', '<%=resultSet.getString(5)%>', '<%=resultSet.getInt(6)%>', '<%=resultSet.getString(7)%>',' <%=resultSet.getString(8)%>', '<%=resultSet.getString(9)%>')">
 					<td width="50px" align="center"><%=count%></td>
 					<td><p style="padding-left: 0px" data-toggle="modal" data-target="#myModal"><%=resultSet.getString(2)%></p></td>
-					<td></td>
 				</tr>
+				</tbody>
 				<%
 				count++;}
 							}
@@ -109,12 +201,17 @@
 							e.printStackTrace();
 						}
 					} else {
-						response.sendRedirect("userlogin.jsp");
+						response.sendRedirect("loginJspCall");
 					}
 				%>
 			</table>
 		</div>
-		<div style="margin-top: 135px" class="modal fade" id="myModal" role="dialog">
+		
+		
+		
+<!-------------------------- 		Pop-up Window To Edit Informations By Clicking On A Particular Name. ----------------------->		
+		
+		<div style="margin-top: 35px" class="modal fade" id="myModal" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header" style="background-color: #F9E2CE">
@@ -130,8 +227,7 @@
 									  class="heading"	readonly="readonly" width="100%" >
 								</div>
 
-
-								<table style="border: none!important">
+								<table>
 							
 									<tr>
 										<td>Name</td>
@@ -172,6 +268,9 @@
 			</div>
 		</div>
 
+
+<!--------------------------------- 		Pop-up Window To Delete Employee.      --------------------------------->		
+
 		<div class="modal fade" id="delete" role="dialog">
 			<div class="modal-dialog" >
 			  <div class="modal-content" style="width: 70%;margin-top: 250px;">
@@ -186,12 +285,6 @@
 			  </div>
 			</div>
 		</div>
+	</div>
 </body>
-<!-- <script type="text/javascript">
-$(function() { $( "#dialog" ).dialog({ buttons: { OK: function() {$(this).dialog("close");}},
-	                                   title: "Movie Title-Sholey",
-	                                   position: { my: "center center", at: "center center" } });
-             }
-$( "#opener" ).click(function() { $( "#dialog" ).dialog( "open" );  });  });
-</script> -->
 </html>

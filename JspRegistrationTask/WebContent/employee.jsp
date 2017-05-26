@@ -102,94 +102,107 @@ label.light {
 	background-color: gray;
 	overflow: hidden;
 }
+
 .div a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-.div a:hover {
-    background-color: #ddd;
-    color: black;
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
 }
 
+.div a:hover {
+	background-color: #ddd;
+	color: black;
+}
 </style>
 <script type="text/javascript">
+
 function employeeValidate(){
-	var name = document.getElementByName("uname").value;
-	var addr = document.getElementByName("addr").value;
-	var cmp = document.getElementByName("cmp").value;
-	var age = document.getElementByName("age").value;
-	var gender = document.getElementByName("gender").value;
-	var domain = document.getElementByName("domain").value;
-	var lang = document.getElementByName("lang").value;
+	var name = document.getElementById("uname").value;
+	var addr = document.getElementById("addr").value;
+	var cmp = document.getElementById("cmp").value;
+	var age = document.getElementById("age").value;
+	var gender = document.getElementById("gender").value;
 	var x=document.getElementById("mail").value;
 	var atposition=x.indexOf("@");  
 	var dotposition=x.lastIndexOf(".");  
+	console.log(document.empreg.gender[0].checked);
+	console.log(document.empreg.gender[1].checked);
+
+	/* var domain = document.getElementByName("domain").value;
+	var lang = document.getElementByName("lang").value; */
+	
+	if( name.length==null|| name==" " ||name.length<=3 ) {
+		alert("Enter name");
+		return false;
+		} 
 	
 	if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
-		  alert("Please enter a valid e-mail address");  
+		  alert("Please enter a valid e-mail address" /* \n atpostion:"+atposition+"\n dotposition:"+dotposition */);  
 		  return false;  
 		  }
-	if(name.length==null||name==" "||name.length<=3)
-	{
-	alert("Enter name");
-	return false;
+	
+	 if(cmp.length==null || cmp.length==" "){
+			alert("Company Is Empty !!");
+			return false;
+		}
+	 
+	 if(age.length==null || age.length==" "){
+			alert("Age Is Empty  !!");
+			return false;
+		}
+	 /* else if(/^[a-zA-Z]+$/.test(userid))	 {
+			 alert("Age must be in number")
+			 return false;
+			 } */
+	 
+	  if ( (document.empreg.gender[0].checked == false)  && (document.empreg.gender[1].checked == false)  )
+		  {
+		  alert ( "Please choose your Gender: Male or Female" ); 
+		  return false;
+		  }
+	  
+	  if(addr.length==null || addr.length==" "){
+			alert("Address Is Empty !!");
+			return false;
+		}
+	  
+	else{
+		return true;
 	}
-	if(addr.length==null || addr.length==" "){
-		alert("Address can't be empty !!");
-		return false;
-	}
-	if(cmp.length==null || cmp.length==" "){
-		alert("Company can't be empty !!");
-		return false;
-	}
-	if(age.length==null || age.length==" " && age==[a-z]){
-		alert("Age can't be empty  !!");
-		return false;
-	}
-	if(gender.length==null || gender.length==" "){
-		alert("Gender can't be empty !!");
-		return false;
-	}
-	if(domain.length==None || domain.length==" "){
-		alert("Choose Any Technology !!");
-		return false;
-	}
-	if(lang.length==None || lang.length==" "){
-		alert("Company can't be empty !!");
-		return false;
-	}
-	return true;
 }
 </script>
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
-	<form action="employeeRegister" method="post" onsubmit="return employeeValidate()">
+	<div>
+		<jsp:include page="header.jsp"></jsp:include>
+	</div>
+	<form action="employeeRegister" method="post" style="margin-top: 60px;" name="empreg">
 
-		<h1>Sign Up</h1>
+		<h1>Employee Form</h1>
 
 		<fieldset>
-			<label for="name">Name:</label> <input type="text" name="uname"id="name">
-			<label for="mail">Email:</label> <input	type="email" id="mail" name="mail">
-			<label for="password">Company:</label> <input type="text" name="company" id="cmp">
-			<label>Age:</label>	<input type="text" id="age" name="age">
-			<label>Gender:</label> <input type="radio" id="gender" value="male" name="gender">
-							<label for="under_13" class="light"> Male</label><br>
-			 				<input type="radio" id="gender" value="female" name="gender">
-			 				<label	for="over_13" class="light">Female</label>
+			<label for="name">Name:</label> 
+			<input type="text" name="uname"	id="uname"> <label for="mail">Email:</label> 
+			<input type="email" id="mail" name="mail"> <label for="password">Company:</label>
+			<input type="text" name="company" id="cmp"> <label>Age:</label>
+			<input type="number" id="age" name="age" min="1" max="110" maxlength="3"> 
+			<label>Gender:</label>
+			<input type="radio" id="gender" value="male" name="gender"> 
+				<label for="under_13" class="light"> Male</label> 
+			<input type="radio" id="gender" value="female" name="gender"> 
+				<label for="over_13" class="light">Female</label>
 		</fieldset>
 		<fieldset>
 			<label for="bio">Address:</label>
 			<textarea name="address" id="addr"></textarea>
 		</fieldset>
 		<fieldset>
-			<label for="job">Specialized Technology:</label> <select
-				name="specialized" id="domain">
+			<label for="job">Specialized Technology:</label> 
+			 <select name="specialized" id="domain">
 				<optgroup label="Web">
 					<option value="html">HTML</option>
 					<option value="php_developor">PHP</option>
@@ -209,7 +222,10 @@ function employeeValidate(){
 					<option value="Java">Java</option>
 					<option value=".Net">.Net</option>
 				</optgroup>
-			</select> <label for="job">Languages:</label> <select name="language"
+			</select> 
+			
+		<label for="job">Languages:</label> 
+			<select name="language"
 				id="lang">
 				<option value="hindi">Hindi</option>
 				<option value="english">English</option>
@@ -226,7 +242,7 @@ function employeeValidate(){
           <input type="checkbox" id="design" value="interest_design" name="user_interest"><label class="light" for="design">Design</label><br>
           <input type="checkbox" id="business" value="interest_business" name="user_interest"><label class="light" for="business">Business</label> -->
 		</fieldset>
-		<button type="submit">Sign Up</button>
+		<button type="submit" onclick="return employeeValidate()">Sign Up</button>
 	</form>
 </body>
 </html>

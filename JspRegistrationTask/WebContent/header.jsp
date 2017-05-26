@@ -9,31 +9,23 @@
 <link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <body>
-	<nav class="navbar navbar-light" style="background-color: #bcbdb4;">
+	<nav class="navbar navbar-light navbar-fixed-top" style="background-color: #353a40;">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#">Empl0ee F0rum</a>
+			<a class="navbar-brand">Empl0yee F0rum</a>
 		</div>
 		<ul class="nav navbar-nav">
 			<%if(session.getAttribute("userid")!=null) {%>
-			<li><a href="employeeDetails">Modify Employee</a></li>
+			<li><a href="employeeDetails" style="font-size: 20px">Modify</a></li>
+			<li><a href="employeeDetailCall" style="font-size: 20px">Add New</a></li>
 			<%} %>
-			
-			
 			
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right">
-			<%if(session.getAttribute("userid")==null){ %>
-			<li><a href="signup"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-
-			<%} %>
-			<%if(session.getAttribute("userid")==null){ %>
-			<li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-			<%} %>
-			
+		
 			<%if(session.getAttribute("userid")!=null){%>
-			<li><a href="logoutServlet"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+			<li><a href="logoutServlet"><span class="glyphicon glyphicon-log-in" style="font-size: 20px"></span> Logout</a></li>
 			<% }%>
 		</ul>
 	</div>

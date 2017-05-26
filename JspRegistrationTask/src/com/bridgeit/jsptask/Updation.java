@@ -24,7 +24,7 @@ public class Updation extends HttpServlet {
 		String company=request.getParameter("company");
 		int age=Integer.parseInt(request.getParameter("age"));
 		String gender=request.getParameter("gender");
-		String domain=request.getParameter("spec");
+		String domain=request.getParameter("spec").trim();
 		String language=request.getParameter("lang");
 		PrintWriter out = response.getWriter();
 		/*out.println(name +" "+address+" "+email+" "+company+" "+age+" "+gender+" "+domain+" "+language);*/

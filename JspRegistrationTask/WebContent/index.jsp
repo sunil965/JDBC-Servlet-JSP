@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import = "java.io.*,java.util.*" %>
+<%@ page import="java.io.*,java.util.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -130,33 +130,29 @@ function userReg()
 	var atposition=x.indexOf("@");  
 	var dotposition=x.lastIndexOf(".");  
 	
-	console.log(pass);
+	 if(userid==" "|| userid.length<3) {
+		alert("Enter User ID Of Min Length 3 Digits");
+		return false;
+		} 
+	 else if(/^[a-zA-Z]+$/.test(userid))	 {
+		 alert("Userid must be in number")
+		 return false;
+		 }
 	
-	if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
-		  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
-		  return false;  
-		  }  
-	
-	if(name.length==null||name==" "||name.length<=3)
-		{
-		alert("Enter name");
+	else if(name.length==null||name==" "||name.length<=3) {
+		alert("Enter name ");
 		return false;
 		}
-	if(userid.length==null||userid==" "||userid.length<3 || userid==[a-z])
-	{
-	alert("Enter User ID");
-	return false;
-	}
-	if(pass.length==null||pass==" "||pass.length<=3)
-	{
-	alert("Enter Password");
-	return false;
-	}
 	
-	else
-		{
-		return true;
+	else if(atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+		  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+		  return false;  
+		  } 
+	else if(pass==""){
+		alert("Enter Password");
+		return false;
 		}
+		return true;
 }
 
 
@@ -164,17 +160,17 @@ function userReg()
 </head>
 
 <body bgcolor="white">
-	<div class="div" style="hight:53px"><font size="10px" color="white">Employee Forum</font>
+	<div class="div" style="width: 100%; margin-top: -8px;">
+		<font size="10px" color="white">Employee Forum</font>
 	</div>
 	<div class="login-page">
 		<div class="form">
 			<h3>User Register Page</h3>
-			<form class="login-form" action="userreg" method="post"
-				onsubmit="return userReg()">
-				<input type="text" name="uid" id="uid" placeholder="userid" /> <input
-					type="text" name="user" id="uname" placeholder="username" /> <input
-					type="text" name="mail" id="mailid" placeholder="email_id" /> <input
-					type="password" name="pwd" id="pwd1" placeholder="password" />
+			<form class="login-form" action="userreg" method="post"	onsubmit="return userReg()">
+				<input type="text" name="uid" id="uid" placeholder="userid" maxlength="3"/>
+				<input type="text" name="user" id="uname" placeholder="username" /> 
+				<input type="text" name="mail" id="mailid" placeholder="email_id" /> 
+				<input type="password" name="pwd" id="pwd1" placeholder="password" />
 				<button>register</button>
 				<p class="message">
 					Already registered? <a href="loginJspCall">Sign In</a>
